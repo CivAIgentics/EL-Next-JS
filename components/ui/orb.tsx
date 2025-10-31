@@ -16,8 +16,8 @@ type OrbProps = {
   volumeMode?: "auto" | "manual"
   manualInput?: number
   manualOutput?: number
-  inputVolumeRef?: React.RefObject<number>
-  outputVolumeRef?: React.RefObject<number>
+  inputVolumeRef?: React.MutableRefObject<number>
+  outputVolumeRef?: React.MutableRefObject<number>
   getInputVolume?: () => number
   getOutputVolume?: () => number
   className?: string
@@ -56,9 +56,7 @@ export function Orb({
           volumeMode={volumeMode}
           manualInput={manualInput}
           manualOutput={manualOutput}
-          // @ts-expect-error Wrong type
           inputVolumeRef={inputVolumeRef}
-          // @ts-expect-error Wrong type
           outputVolumeRef={outputVolumeRef}
           getInputVolume={getInputVolume}
           getOutputVolume={getOutputVolume}
